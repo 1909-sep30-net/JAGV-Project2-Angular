@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CreateComponent } from '../create/create.component';
 
 @Component({
   selector: 'app-home',
@@ -33,10 +34,19 @@ export class Dialog {
 
   constructor(
     public dialogRef: MatDialogRef<Dialog>,
+    public dialog: MatDialog
     ) {}
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  onLogin()
+  {
+
+  }
+
+  onCreate()
+  {
+    this.dialog.open(CreateComponent, {
+      panelClass :'bg'
+    });
   }
 
 }

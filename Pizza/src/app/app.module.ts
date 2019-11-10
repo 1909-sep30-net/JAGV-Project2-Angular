@@ -14,6 +14,39 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent, Dialog } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { OrderComponent } from './order/order.component';
+import { CreateComponent } from './create/create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//Angular Material Components
+import {MatCheckboxModule} from '@angular/material';
+
+import {MatInputModule} from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatMenuModule} from '@angular/material/menu';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatChipsModule} from '@angular/material/chips';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +54,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     NavigationComponent,
     HomeComponent,
     LoginComponent,
-    Dialog
+    Dialog,
+    OrderComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -34,11 +69,49 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatListModule,
     MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatStepperModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatButtonToggleModule,
+    MatChipsModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatDialogModule,
+    MatTooltipModule,
+    MatSnackBarModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
+
+    
   ],
   entryComponents:
   [ 
     HomeComponent,
-    Dialog
+    Dialog,
+    CreateComponent
 
   ],
   providers: [],
