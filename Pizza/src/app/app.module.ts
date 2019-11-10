@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MapComponent } from './map/map.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatDialogModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   entryComponents:
     [
