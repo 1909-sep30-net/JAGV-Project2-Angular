@@ -20,3 +20,12 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(4)(1aea89d4-388d-4d50-938f-9c95f509c96d)'
+    appType: 'webAppLinux'
+    WebAppName: 'jagvangular'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
