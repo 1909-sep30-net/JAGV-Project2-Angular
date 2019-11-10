@@ -1,0 +1,23 @@
+<mat-grid-list cols="2" rowHeight="fit" style="height:100%">
+    <mat-grid-tile>
+        <div id="right-panel">
+            <div>
+                <b>Stops:</b> 
+                <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+                <select multiple id="waypoints">
+                    <option *ngFor="let stop of stops" [value]="stop.value">{{stop.name}}</option>
+                </select>
+                <br>
+                <div style="text-align:start" class="space">
+                    <button (click)="ngAfterViewInit()" class="btn btn-primary" id="start2">Start</button>
+                    <button style="background-color: indianred;" (click)="deliverPizzas()"
+                        class="btn btn-secondary">Finished</button>
+                </div>
+            </div>
+            <div id="directions-panel"></div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div #map id="map"></div>
+    </mat-grid-tile>
+</mat-grid-list>

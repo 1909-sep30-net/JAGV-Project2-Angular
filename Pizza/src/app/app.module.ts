@@ -14,6 +14,8 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent, Dialog } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MapComponent } from './map/map.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     NavigationComponent,
     HomeComponent,
     LoginComponent,
-    Dialog
+    Dialog,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -34,13 +37,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatListModule,
     MatDialogModule,
+    MatGridListModule
   ],
   entryComponents:
-  [ 
-    HomeComponent,
-    Dialog
+    [
+      HomeComponent,
+      Dialog
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
