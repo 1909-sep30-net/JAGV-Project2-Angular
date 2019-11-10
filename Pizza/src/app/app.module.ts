@@ -113,7 +113,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     Dialog,
     CreateComponent
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms'
 export class CreateComponent implements OnInit {
 
   userForm;
-
+  hide: any;
   constructor(public dialog: MatDialog,
     public dialogRef: MatDialogRef<CreateComponent>,
     private formBuilder: FormBuilder
