@@ -15,14 +15,14 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  appDir: Pizza
+  appDir: JAGV-Project2-Angular
 
 steps:
 - checkout: self
   clean: true
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '12.x'
   displayName: 'Install Node.js'
 
 - script: npm ci
@@ -39,4 +39,4 @@ steps:
     azureSubscription: 'Azure subscription 1(4)(1aea89d4-388d-4d50-938f-9c95f509c96d)'
     appType: 'webApp'
     WebAppName: 'jagvangular'
-    packageForLinux: '$(appDir)/dist/Pizza/*'
+    packageForLinux: '$(appDir)/Pizza/dist/Pizza*'
