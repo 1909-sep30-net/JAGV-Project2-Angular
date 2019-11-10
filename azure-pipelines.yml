@@ -37,6 +37,6 @@ steps:
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1(4)(1aea89d4-388d-4d50-938f-9c95f509c96d)'
-    appType: 'webAppLinux'
+    appType: 'webApp'
     WebAppName: 'jagvangular'
     packageForLinux: '$(appDir)/dist/*'
