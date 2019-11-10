@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  appDir: Pizza
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -20,6 +23,7 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+  workingDirectory: $(appDir)
 
 
 - task: AzureRmWebAppDeployment@4
