@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MapComponent } from './map/map.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatIconModule,
     MatListModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
   entryComponents:
     [
