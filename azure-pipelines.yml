@@ -39,4 +39,4 @@ steps:
     azureSubscription: 'Azure subscription 1(4)(1aea89d4-388d-4d50-938f-9c95f509c96d)'
     appType: 'webApp'
     WebAppName: 'jagvangular'
-    packageForLinux: '$(appDir)/dist/*'
+    packageForLinux: '$(appDir)/dist/Pizza/*'
