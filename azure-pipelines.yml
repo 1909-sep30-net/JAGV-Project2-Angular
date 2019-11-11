@@ -51,9 +51,9 @@ steps:
 #   displayName: ng test
 #   workingDirectory: $(appDir)
 
-- script: npm run lint
-  displayName: ng lint
-  workingDirectory: $(appDir)
+# - script: npm run lint
+#   displayName: ng lint
+#   workingDirectory: $(appDir)
 
 - task: SonarCloudAnalyze@1
   displayName: Run SonarCloud analysis
