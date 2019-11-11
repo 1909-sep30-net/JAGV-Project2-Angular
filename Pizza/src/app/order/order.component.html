@@ -1,4 +1,4 @@
-<mat-drawer #drawer mode="over">
+<mat-drawer mode="over">
     <form [formGroup]="orderForm" (ngSubmit)="OnSubmit()">
 
         <div>
@@ -22,16 +22,12 @@
             </mat-form-field>
         </div>
 
-
-
-
         <mat-form-field>
             <mat-label>Select your meat toppings</mat-label>
             <mat-select multiple>
                 <mat-option *ngFor="let meat of meatList" [value]="meat">{{meat}}</mat-option>
             </mat-select>
         </mat-form-field>
-
 
         <div>
             <mat-form-field>
