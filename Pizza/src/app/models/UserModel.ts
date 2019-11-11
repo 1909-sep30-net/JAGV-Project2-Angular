@@ -5,7 +5,7 @@ export default interface UserModel {
     id: number,
     name: string,
     password: string,
-    UserType: UserTypeModel,
-    Address: AddressModel
+    userType: UserTypeModel,
+    address: AddressModel
 
 }
