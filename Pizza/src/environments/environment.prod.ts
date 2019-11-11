@@ -3,6 +3,7 @@ s.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBdi_xQoJs88JHSJ7UOlFk
 
 
 export const environment = {
+  pizzaStoreApiBaseUrl: 'https://jagv.azurewebsites.net',
   production: true,
   s
 };
