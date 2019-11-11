@@ -1,6 +1,6 @@
 import { Component, AfterViewInit} from
   '@angular/core';
-// import {access} from "access";
+import {environment} from "src/environments/environment.prod";
 declare var google;
 
 function calculateAndDisplayRoute() {
@@ -69,7 +69,7 @@ export class MapComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit() {
-    // window.document.head.appendChild(access.s);
+    window.document.head.appendChild(environment.s);
     calculateAndDisplayRoute();
   }
   deliverPizzas() {
