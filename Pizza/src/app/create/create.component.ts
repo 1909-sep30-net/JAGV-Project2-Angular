@@ -83,8 +83,8 @@ export class CreateComponent implements OnInit {
       id: 0,
       name: this.userForm.get(`name`).value,
       password: this.userForm.get(`password`).value,
-      UserType: this.userType,
-      Address: this.address
+      userType: this.userType,
+      address: this.address
     }
 
     this.api.createUser(this.user)

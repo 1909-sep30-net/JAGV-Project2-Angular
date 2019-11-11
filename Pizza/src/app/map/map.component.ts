@@ -1,7 +1,9 @@
-import { Component, AfterViewInit} from
+import { Component, AfterViewInit } from
   '@angular/core';
-import {environment} from "src/environments/environment.prod";
-declare var google;
+import { MapService } from '../services/map.service';
+import UserModel from '../models/UserModel';
+import { environment } from "src/environments/environment.prod";
+declare var google :any;
 
 function calculateAndDisplayRoute() {
   let directionsService = new google.maps.DirectionsService;
@@ -43,16 +45,16 @@ function calculateAndDisplayRoute() {
 }
 
 function deliverPizzas() {
-  let deliveries = [];
-  let customers = document.getElementById('waypoints');
-  let houses = customers.getElementsByTagName('option');
-  for (let i = 0; i < houses.length; i++) {
-    if (houses[i].selected) {
-      deliveries.push({
-        orders: houses[i].value,
-      });
-    }
-  }
+  // let deliveries = [];
+  // let customers = document.getElementById('waypoints');
+  // let houses = customers.getElementsByTagName('option');
+  // for (let i = 0; i < houses.length; i++) {
+  //   if (houses[i].selected) {
+  //     deliveries.push({
+  //       orders: houses[i].value,
+  //     });
+  //   }
+  // }
 }
 
 
@@ -62,6 +64,13 @@ function deliverPizzas() {
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements AfterViewInit {
+
+  constructor(
+    private api: MapService
+    ) {}
+
+  usersList: UserModel[];
+
 
   stops = [
     { name: "Liv+", value: "1001 S Center St, Arlington, TX 76010" },
@@ -73,7 +82,9 @@ export class MapComponent implements AfterViewInit {
     calculateAndDisplayRoute();
   }
   deliverPizzas() {
-    console.log("success");
+    this.api.getUsers().then( users => this.usersList = users);
+    console.log({name: this.usersList[0].name,
+       value: `${this.usersList[0].address.street} ${this.usersList[0].address.city}, ${this.usersList[0].address.state} ${this.usersList[0].address.zipCode}`});
   }
 
 }
