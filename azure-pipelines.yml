@@ -29,9 +29,38 @@ steps:
   displayName: npm install
   workingDirectory: $(appDir)
 
+
+- task: SonarCloudPrepare@1
+  displayName: Prepare SonarCloud analysis
+  inputs:
+    SonarCloud: 'SonarCloudService'
+    organization: '1909-sep30-net'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'Project2JAGV-Angular'
+    cliSources: '$(appDir)/src'
+    extraProperties: |
+      sonar.coverage.exclusions=**/*.spec.ts
+      sonar.typescript.lcov.reportPaths=$(appDir)/coverage/$(appDir)/lcov.info
+
 - script: npx ng build --prod
   displayName: ng build
   workingDirectory: $(appDir)
+
+# - script: npx ng test --browsers ChromeHeadless --no-watch --code-coverage
+#   displayName: ng test
+#   workingDirectory: $(appDir)
+
+# - script: npm run lint
+#   displayName: ng lint
+#   workingDirectory: $(appDir)
+
+- task: SonarCloudAnalyze@1
+  displayName: Run SonarCloud analysis
+
+- task: SonarCloudPublish@1
+  displayName: Publish SonarCloud quality gate result
+
 
 - task: AzureRmWebAppDeployment@4
   inputs:
