@@ -7,6 +7,7 @@ import UserModel from '../models/UserModel';
 
 
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-create',
@@ -56,9 +57,41 @@ export class CreateComponent implements OnInit {
 
   OnSubmit()
   {
-    this.address.city = this.userForm['name'].value;
+
+    console.log(this.userForm.get("street").value)
     
-    console.log(this.address.city);
+    //this.address.id = 0;
+    this.address =
+    {
+      id : 0,
+      street : this.userForm.get("street").value,
+      city : this.userForm.get(`city`).value,
+      state : this.userForm.get(`state`).value,
+      zipCode : this.userForm.get(`zip`).value
+
+    }
+
+    //this.userType.id = 0;
+    this.userType = 
+    {
+      id : 0,
+      name : this.userForm.get(`userType`).value,
+    } 
+
+    this.user = 
+    {
+      id: 0,
+      name: this.userForm.get(`name`).value,
+      password: this.userForm.get(`password`).value,
+      UserType: this.userType,
+      Address: this.address
+    }
+
+    this.api.createUser(this.user)
+    .then(res => console.log("created?"))
+    .catch(function (error) {console.error("Something went wrong :(.... -> ", error)});
+    
+   
   }
 
 
