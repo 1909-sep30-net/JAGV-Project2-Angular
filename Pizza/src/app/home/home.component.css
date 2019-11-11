@@ -39,7 +39,7 @@
 button
 {
     position: absolute;
-    transform: translate(-50%, 430%);
+    transform: translate(-50%, 460%);
     background-color: rgba(0,0,0, 0.4);
     border-style: solid;
     border-color:white;
