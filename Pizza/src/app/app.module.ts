@@ -50,7 +50,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MapComponent } from './map/map.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,8 @@ import { AppRoutingModule } from './app-routing.module';
     LoginComponent,
     Dialog,
     OrderComponent,
-    CreateComponent
+    CreateComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -110,8 +111,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatPaginatorModule,
 
   
-    HttpClientModule,
-    AppRoutingModule
+    HttpClientModule
   ],
   entryComponents:
   [ 

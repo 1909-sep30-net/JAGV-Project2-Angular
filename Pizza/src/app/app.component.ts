@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
+// import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,10 @@ import { AuthService } from './auth.service';
 export class AppComponent implements OnInit {
   title = 'Pizza';
 
-  constructor(private auth: AuthService) { }
+  // constructor(private auth: AuthService) { }
 
   ngOnInit() {
-    this.auth.localAuthSetup();
-    this.auth.handleAuthCallback();
+    // this.auth.localAuthSetup();
+    // this.auth.handleAuthCallback();
   }
 }
