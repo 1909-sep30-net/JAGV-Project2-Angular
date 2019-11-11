@@ -1,45 +1,47 @@
-<form [formGroup]="orderForm" (ngSubmit)="OnSubmit()">
+<mat-drawer #drawer mode="over">
+    <form [formGroup]="orderForm" (ngSubmit)="OnSubmit()">
 
-    <div>
-      <mat-form-field>
-          <mat-label>Select your cheeses</mat-label>
-        <mat-select required>
-          <mat-option *ngFor="let crust of crustList" [value]="crust">{{crust}}</mat-option>
-        </mat-select>>
-        <mat-error>You can't make a pizza without crust!</mat-error>
-      </mat-form-field>
-    </div>
-    
-    
-    <div>
-      <ng-template matStepLabel>What kinds of cheese?</ng-template>
-      <mat-form-field>
-        <mat-label>Select your cheeses</mat-label>
-        <mat-select multiple>
-          <mat-option *ngFor="let cheese of cheeseList" [value]="cheese">{{cheese}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    
-    
-    
-      
-      <mat-form-field>
-        <mat-label>Select your meat toppings</mat-label>
-        <mat-select multiple>
-          <mat-option *ngFor="let meat of meatList" [value]="meat">{{meat}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    
-    
-    <div>
-      <mat-form-field>
-        <mat-label>Select your vegetable toppings</mat-label>
-        <mat-select multiple>
-          <mat-option *ngFor="let vegetable of vegetableList" [value]="vegetable">{{vegetable}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-      <button mat-raised-button> Submit</button>
-    
+        <div>
+            <mat-form-field>
+                <mat-label>Select your cheeses</mat-label>
+                <mat-select required>
+                    <mat-option *ngFor="let crust of crustList" [value]="crust">{{crust}}</mat-option>
+                </mat-select>>
+                <mat-error>You can't make a pizza without crust!</mat-error>
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <ng-template matStepLabel>What kinds of cheese?</ng-template>
+            <mat-form-field>
+                <mat-label>Select your cheeses</mat-label>
+                <mat-select multiple>
+                    <mat-option *ngFor="let cheese of cheeseList" [value]="cheese">{{cheese}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+
+
+        <mat-form-field>
+            <mat-label>Select your meat toppings</mat-label>
+            <mat-select multiple>
+                <mat-option *ngFor="let meat of meatList" [value]="meat">{{meat}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <div>
+            <mat-form-field>
+                <mat-label>Select your vegetable toppings</mat-label>
+                <mat-select multiple>
+                    <mat-option *ngFor="let vegetable of vegetableList" [value]="vegetable">{{vegetable}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button> Submit</button>
+
     </form>
+</mat-drawer>
