@@ -1,1 +1,28 @@
-<p>login works!</p>
+<form class="container" [formGroup]="loginForm" (ngSubmit)="OnLogin()">
+        <mat-dialog-content class="container">
+    
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name" formControlName="name" required>
+                <mat-error>Name required</mat-error>
+            </mat-form-field>
+    
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" [type]="hide ? 'text' : 'password'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                </button>
+                <mat-error>Password required</mat-error>
+            </mat-form-field>
+    
+            
+            <button mat-raised-button type="submit"
+                style="background-color:rgb(133, 108, 72); margin-top:10px">Login</button>
+        </mat-dialog-content>
+    
+    
+    </form>

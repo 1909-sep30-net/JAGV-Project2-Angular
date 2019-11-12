@@ -43,8 +43,7 @@
 {
   background-color: rgba(0,0,0, 0.0); /* Black w/opacity/see-through */
   border-bottom: 1px solid blanchedalmond;
-  color: white;
-  
+  color: white; 
   z-index: 5;
   padding: 20px;
   position: fixed;
