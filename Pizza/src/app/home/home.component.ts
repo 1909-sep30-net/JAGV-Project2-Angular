@@ -6,6 +6,7 @@ import UserModel from '../models/UserModel';
 import LoginModel from '../models/LoginModel';
 import { LoginComponent } from '../login/login.component';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -51,7 +52,7 @@ export class Dialog {
   constructor(
     public dialogRef: MatDialogRef<Dialog>,
     public dialog: MatDialog,
-    private api: LoginService,
+    
     ) {}
 
 

@@ -50,7 +50,16 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MapComponent } from './map/map.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
 // import { AppRoutingModule } from './app-routing.module';
+
+
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'map', component: MapComponent },
+  { path: 'order/:id', component: OrderComponent},
+  { path: '', component: HomeComponent, children: [{path: '', component: NavigationComponent}]},
+];
 
 @NgModule({
   declarations: [
@@ -109,9 +118,14 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    RouterModule.forRoot(routes),
 
   
     HttpClientModule
+  ],
+  exports:
+  [
+    RouterModule
   ],
   entryComponents:
   [ 

@@ -57,7 +57,6 @@ export class CreateComponent implements OnInit {
 
   OnSubmit()
   {
-
     console.log(this.userForm.get("street").value)
     
     //this.address.id = 0;
@@ -90,10 +89,5 @@ export class CreateComponent implements OnInit {
     this.api.createUser(this.user)
     .then(res => console.log("created?"))
     .catch(function (error) {console.error("Something went wrong :(.... -> ", error)});
-    
-   
   }
-
-
-
 }

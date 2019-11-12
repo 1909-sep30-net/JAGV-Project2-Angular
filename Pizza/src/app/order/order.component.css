@@ -27,6 +27,7 @@ button
 .drawer .mat-drawer
 {
     height: 100%;
+    position: absolute;
 }
 
 .detailsDialog .mat-dialog-container {
