@@ -23,8 +23,8 @@ export class ManagerComponent implements OnInit {
       this.usersList = users;
       for (let i = 0; i < users.length; i++) {
         this.users.push({
-          name: `${this.usersList[i].name} ${this.usersList[i].password}`,
-          value: `${this.usersList[i].address.street} ${this.usersList[i].address.city}, ${this.usersList[i].address.state} ${this.usersList[i].address.zipCode}`
+          name: `Name: ${this.usersList[i].name} Password${this.usersList[i].password}`,
+          value: `\n\tAddress: ${this.usersList[i].address.street} ${this.usersList[i].address.city}, ${this.usersList[i].address.state} ${this.usersList[i].address.zipCode}`
         });
       }
     });
@@ -36,8 +36,8 @@ export class ManagerComponent implements OnInit {
       this.driverList = drivers;
       for (let i = 0; i < drivers.length; i++) {
         this.users.push({
-          name: `${this.driverList[i].name} ${this.driverList[i].password}`,
-          value: `${this.driverList[i].address.street} ${this.driverList[i].address.city}, ${this.driverList[i].address.state} ${this.driverList[i].address.zipCode}`
+          name: `Name: ${this.driverList[i].name} Password: ${this.driverList[i].password}`,
+          value: `\n\tAddress: ${this.driverList[i].address.street} ${this.driverList[i].address.city}, ${this.driverList[i].address.state} ${this.driverList[i].address.zipCode}`
         });
       }
     });
