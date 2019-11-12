@@ -117,7 +117,8 @@ import { HttpClientModule } from '@angular/common/http';
   [ 
     HomeComponent,
     Dialog,
-    CreateComponent
+    CreateComponent,
+    LoginComponent
 
     ],
   providers: [],
