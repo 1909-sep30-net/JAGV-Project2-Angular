@@ -12,22 +12,26 @@
         <div class="list-container">
             <mat-list>
                 <h2>Crust:</h2>
-                <mat-list-item>{{crust.get("userCrust").value}}</mat-list-item>
+                <mat-list-item>{{pizzaCrust.name + "        $" + pizzaCrust.price}}</mat-list-item>
+                <mat-divider></mat-divider>
+                <h2>Sauce:</h2>
+                <mat-list-item>{{pizzaSauce.name + "        $" + pizzaSauce.price}}</mat-list-item>
                 <mat-divider></mat-divider>
                 <h2>Cheeses:</h2>
-                <mat-list-item *ngFor="let cheese of cheeseToppings;"> {{cheese}}</mat-list-item>
+                <mat-list-item *ngFor="let cheese of cheeseToppings;"> {{cheese.name + "        $" + cheese.price}}</mat-list-item>
                 <mat-divider></mat-divider>
                 <h2>Meats:</h2>
-                <mat-list-item *ngFor="let meat of meatToppings;"> {{meat}}</mat-list-item>
+                <mat-list-item *ngFor="let meat of meatToppings;"> {{meat.name + "      $" + meat.price}}</mat-list-item>
                 <mat-divider></mat-divider>
                 <h2>Vegetables:</h2>
-                <mat-list-item *ngFor="let vegetable of vegetableToppings;"> {{vegetable}}</mat-list-item>
+                <mat-list-item *ngFor="let vegetable of vegetableToppings;"> {{vegetable.name + "       $" + vegetable.price}}</mat-list-item>
             </mat-list>
 
         </div>
         <div class="bottom-border"></div>
         <h2>Total: {{total | currency}}</h2>
         <button mat-raised-button style="position: right; " (click)="drawer.toggle()">Go Back</button>
+        <button mat-raised-button (click) = "OnSubmit()">Submit</button>
     </mat-drawer>
 
     <!------------------------------------------------------------------------------------------------------->
@@ -36,16 +40,33 @@
     <mat-vertical-stepper [linear]="isLinear" #stepper class="stepper">
 
 
+
         <mat-step [stepControl]="crust">
             <form [formGroup]="crust">
                 <ng-template matStepLabel>What kinds of crust?</ng-template>
                 <mat-form-field>
                     <mat-label>Select your crust</mat-label>
                     <mat-select formControlName="userCrust">
-                        <mat-option *ngFor="let crust of crustList" [value]="crust">{{crust}}</mat-option>
+                        <mat-option *ngFor="let crust of crustList" [value]="crust">{{crust.name + "     $" + crust.price}}</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <div>
+                    <button mat-raised-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="sauce">
+            <form [formGroup]="sauce">
+                <ng-template matStepLabel>What kinds of sauce?</ng-template>
+                <mat-form-field>
+                    <mat-label>Select your sauce</mat-label>
+                    <mat-select formControlName="userSauce">
+                        <mat-option *ngFor="let sauce of sauceList" [value]="sauce">{{sauce.name + "     $" + sauce.price}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button matStepperPrevious>Back</button>
                     <button mat-raised-button matStepperNext>Next</button>
                 </div>
             </form>
@@ -59,7 +80,7 @@
                     <mat-select formControlName="userCheeses" multiple>
                         <mat-option (click)="disableCheeseSelect()" [value]="None"> No Cheese 😐 </mat-option>
                         <mat-option [disabled]="cheeseSelector" *ngFor="let cheese of cheeseList" [value]="cheese">
-                            {{cheese}}</mat-option>
+                            {{cheese.name + "     $" + cheese.price}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
@@ -77,7 +98,7 @@
                     <mat-label>Select your meat toppings</mat-label>
                     <mat-select formControlName="userMeats" multiple>
                         <mat-option (click)="disableMeatSelect()" [value]="None"> None </mat-option>
-                        <mat-option [disabled]="meatSelector" *ngFor="let meat of meatList" [value]="meat">{{meat}}
+                        <mat-option [disabled]="meatSelector" *ngFor="let meat of meatList" [value]="meat">{{meat.name + "     $" + meat.price}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -96,7 +117,7 @@
                     <mat-select formControlName="userVegetables" multiple>
                         <mat-option (click)="disableVegetableSelect()" [value]="None"> None </mat-option>
                         <mat-option [disabled]="vegetableSelector" *ngFor="let vegetable of vegetableList"
-                            [value]="vegetable">{{vegetable}}
+                            [value]="vegetable">{{vegetable.name + "     $" + vegetable.price}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -111,7 +132,7 @@
             <ng-template matStepLabel>Your pizza is made!</ng-template>
             <div>
                 <button mat-raised-button matStepperPrevious>Back</button>
-                <button mat-raised-button (click)="drawer.toggle()">Submit Pizza</button>
+                <button mat-raised-button (click)="drawer.toggle(); loadOrderIngredients()">Submit Pizza</button>
                 <button mat-raised-button (click)="stepper.reset()">Reset</button>
             </div>
         </mat-step>
