@@ -50,6 +50,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MapComponent } from './map/map.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
+import { ManagerComponent } from './manager/manager/manager.component';
 // import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -61,7 +62,8 @@ import { HttpClientModule } from '@angular/common/http';
     Dialog,
     OrderComponent,
     CreateComponent,
-    MapComponent
+    MapComponent,
+    ManagerComponent
   ],
   imports: [
     BrowserModule,

@@ -2,17 +2,17 @@
     <mat-grid-tile>
         <div id="right-panel">
             <div>
-                <b>Stops:</b>
-                <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
-                <select multiple id="waypoints">
+                <strong>Stops:</strong>
+                <em>(Ctrl+Click or Cmd+Click for multiple selection)</em> <br>
+                <select  [(value)]="selected" multiple id="waypoints">
                     <option *ngFor="let stop of stops" [value]="stop.value">{{stop.name}}</option>
                 </select>
                 <br>
                 <div class="space">
                     <span>
-                        <button mat-raised-button style="background-color: lightgreen;" (click)="ngAfterViewInit()"
+                        <button mat-raised-button style="background-color: green;" (click)="ngAfterViewInit()"
                             class="btn btn-primary" id="start2">Generate Route</button>
-                        <button mat-raised-button style="background-color: indianred;" (click)="deliverPizzas()"
+                        <button mat-raised-button style="background-color: indianred;" (click)="loadAdresses()"
                             class="btn btn-secondary">Confirm Deliveries</button>
                     </span>
                 </div>

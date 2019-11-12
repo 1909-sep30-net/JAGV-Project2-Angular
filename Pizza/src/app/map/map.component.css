@@ -13,14 +13,15 @@
   #right-panel select {
       /* height: 100px; */
     width: 100%;
+    background-color: grey;
   }
 
-  #right-panel b,i {
+  #right-panel strong,em {
     color: antiquewhite;
     font-style: bold;
   }
 
-  #right-panel i {
+  #right-panel em {
     font-size: 12px;
   }
 
