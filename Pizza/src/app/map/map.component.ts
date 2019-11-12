@@ -4,6 +4,7 @@ import { MapService } from '../services/map.service';
 import UserModel from '../models/UserModel';
 import { environment } from "src/environments/environment.prod";
 import AddressModel from '../models/AddressModel';
+import { Router } from '@angular/router';
 declare var google: any;
 
 
@@ -30,7 +31,8 @@ function deliverPizzas() {
 export class MapComponent implements AfterViewInit {
 
   constructor(
-    private api: MapService
+    private api: MapService,
+    private router: Router
   ) { }
 
   usersList: AddressModel[] = [];
@@ -48,16 +50,23 @@ export class MapComponent implements AfterViewInit {
 
   
   loadAdresses() {
-    this.api.getAdresses(1).then(users => {
+    this.api.getAdresses(3).then(users => {
       this.usersList = users;
       for (let i = 0; i < users.length; i++) {
       this.stops.push({
         name: `${this.usersList[i].street} ${this.usersList[i].city}, ${this.usersList[i].state} ${this.usersList[i].zipCode}`,
         value: `${this.usersList[i].street} ${this.usersList[i].city}, ${this.usersList[i].state} ${this.usersList[i].zipCode}`
+        
       });
+      console.log("value ->", this.usersList);
     }
     });
 
+  }
+
+  redirect()
+  {
+    this.router.navigate([""])
   }
 
 

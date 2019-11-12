@@ -9,6 +9,7 @@ import IngredientTypeModel from '../models/IngredientTypeModel';
 import PizzaModel from '../models/PizzaModel';
 import PizzaIngredientModel from '../models/PizzaIngredientModel';
 import { LoginService } from '../services/login.service';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -90,6 +91,7 @@ export class OrderComponent implements OnInit {
   cheeseSelector: boolean = false;
   meatSelector: boolean = false;
   vegetableSelector: boolean = false;
+  orderCreated: boolean = false;
 
 
   get pizzaCrust(): IngredientModel { return this.crust.get("userCrust").value as IngredientModel}
@@ -103,7 +105,8 @@ export class OrderComponent implements OnInit {
 
   constructor(public dialog: MatDialog,
     private formBuilder: FormBuilder,
-    private api: LoginService) {
+    private api: LoginService,
+    private router: Router) {
 
     this.total = 0.00
   }
@@ -280,8 +283,8 @@ export class OrderComponent implements OnInit {
     this.order = 
     {
       id: 0,
-      userId: 1,
-      delivererId: 1,
+      userId: 4,
+      delivererId: 4,
       delivered: false,
       pizzas: [this.pizza]
     }
@@ -289,9 +292,16 @@ export class OrderComponent implements OnInit {
     console.log("Order => ", this.order)
 
     this.api.CreateOrder(this.order)
-    .then(response => console.log("Order created!!!"))
+    .then(response => {console.log("Order created!!!"), this.orderCreated = true})
     .catch(error => console.log("Did not create....", error))
 
+    
+
+  }
+
+  redirect()
+  {
+    this.router.navigate([''])
   }
 
 }
