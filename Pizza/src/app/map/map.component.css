@@ -43,15 +43,20 @@
   #directions-panel {
     background-color: rgb(255, 162, 119);
     overflow: scroll;
-    height: 642px;
+    height: 450px;
     width: 100%;
   }
   .btn-secondary {
-    margin-left: 390px;
+    margin-left: 430px;
     margin-bottom: 3px;
     align-content: flex-end;
   }
 
   .btn-primary {
     margin-bottom: 3px;
+  }
+
+  .btn-third {
+    margin-bottom: 3px;
+    color: black;
   }
