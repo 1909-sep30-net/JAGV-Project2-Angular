@@ -3,6 +3,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { CreateComponent } from '../create/create.component';
 import {LoginService} from '../services/login.service';
 import UserModel from '../models/UserModel';
+import LoginModel from '../models/LoginModel';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-home',
@@ -39,17 +41,25 @@ export class HomeComponent implements OnInit {
 export class Dialog {
 
   usersList: UserModel[] = null;
+  
+  login: LoginModel = null;
+
+  user: UserModel = null;
+
+  
 
   constructor(
     public dialogRef: MatDialogRef<Dialog>,
     public dialog: MatDialog,
-    private api: LoginService
+    private api: LoginService,
     ) {}
+
 
   onLogin()
   {
-    this.api.getUsers().then( users => this.usersList = users);
-    console.log(this.usersList[0].name);
+    this.dialog.open(LoginComponent, {
+      panelClass:'bg'
+    })
   }
 
   onCreate()

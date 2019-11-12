@@ -119,7 +119,8 @@ import { ManagerComponent } from './manager/manager/manager.component';
   [ 
     HomeComponent,
     Dialog,
-    CreateComponent
+    CreateComponent,
+    LoginComponent
 
     ],
   providers: [],
