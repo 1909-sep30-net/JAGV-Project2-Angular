@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import UserModel from '../models/UserModel'
+import UserModel from '../models/UserModel';
 import { environment } from 'src/environments/environment.prod';
-import AddressModel from '../models/AddressModel';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class MapService {
+export class ManagerService {
 
   constructor(private http: HttpClient) { }
 
@@ -17,9 +15,8 @@ export class MapService {
     return this.http.get<UserModel[]>(url).toPromise().then();
   }
 
-  getAdresses(id: number): Promise<AddressModel[]> {
-    const url = `${environment.pizzaStoreApiBaseUrl}/api/drivers/${id}/orders/`;
-    return this.http.get<AddressModel[]>(url).toPromise().then();
+  getDrivers(): Promise<UserModel[]> {
+    const url = `${environment.pizzaStoreApiBaseUrl}/api/managers/drivers/`;
+    return this.http.get<UserModel[]>(url).toPromise().then();
   }
-
 }
