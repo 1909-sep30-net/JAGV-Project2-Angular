@@ -50,7 +50,7 @@ export class MapComponent implements AfterViewInit {
 
   
   loadAdresses() {
-    this.api.getAdresses(3).then(users => {
+    this.api.getAdresses(4).then(users => {
       this.usersList = users;
       for (let i = 0; i < users.length; i++) {
       this.stops.push({
