@@ -58,6 +58,10 @@ export class LoginComponent implements OnInit {
     {
       this.router.navigate(['/map'])
     }
+    else if (this.user.userType.name == "Admin")
+    {
+      this.router.navigate(['/manager'])
+    }
 
     
     this.dialog.closeAll();

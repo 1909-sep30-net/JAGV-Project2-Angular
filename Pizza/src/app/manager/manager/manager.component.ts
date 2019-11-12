@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ManagerService } from 'src/app/services/manager.service';
 import UserModel from 'src/app/models/UserModel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manager',
@@ -12,7 +13,7 @@ export class ManagerComponent implements OnInit {
   driverList: UserModel[] = [];
   users = [];
 
-  constructor(private api: ManagerService) { }
+  constructor(private api: ManagerService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,7 @@ export class ManagerComponent implements OnInit {
           name: `Name: ${this.usersList[i].name} Password${this.usersList[i].password}`,
           value: `\n\tAddress: ${this.usersList[i].address.street} ${this.usersList[i].address.city}, ${this.usersList[i].address.state} ${this.usersList[i].address.zipCode}`
         });
+        console.log("id -> ", this.usersList[i].id);
       }
     });
 
@@ -42,6 +44,11 @@ export class ManagerComponent implements OnInit {
       }
     });
 
+  }
+
+  redirect()
+  {
+    this.router.navigate([""])
   }
 
 }

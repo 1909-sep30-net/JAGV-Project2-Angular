@@ -60,6 +60,7 @@ import { ManagerComponent } from './manager/manager/manager.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'map', component: MapComponent },
+  { path: 'manager', component: ManagerComponent},
   { path: 'order/:id', component: OrderComponent},
   { path: '', component: HomeComponent, children: [{path: '', component: NavigationComponent}]},
 ];
