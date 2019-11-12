@@ -9,4 +9,10 @@ describe('MapService', () => {
     const service: MapService = TestBed.get(MapService);
     expect(service).toBeTruthy();
   });
+  
+  it('should be created', () => {
+    const service: MapService = TestBed.get(MapService);
+    expect(service.getUsers).toBeTruthy();
+  });
+
 });
